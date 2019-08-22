@@ -1,0 +1,118 @@
+@import '__setup';
+@import '__styles';
+
+body {
+    background-image: url("../img/kianAndZoe.jpg");
+    background-size: cover;
+    color: $bodyColor;
+    font-family: trajanpro;
+}
+
+div 
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+
+    h1
+    {
+        font-size: 4rem;
+    }
+
+    h2
+    {
+        font-size: 2.5rem;
+        font-weight: normal;
+    }
+}
+
+img {
+    opacity: 0.1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40%;
+}
+
+a {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: $bodyColor;
+    font-weight: bold;
+    display: inline-block;
+    border: none;
+
+    &::before, &::after
+    {
+        content: "";
+        width: 0;
+        height: 3px;
+        position: absolute;
+        transition: all 0.2s linear;
+        background: #fff;
+        transition-duration: 0.3s;
+    }
+
+    &::before
+    {
+        left: 50%;
+        top: 0;
+    }
+
+    &::after
+    {
+        left: 50%;
+        bottom: 0;
+    }
+
+    &:hover
+    {
+        &::before, &::after
+        {
+            width: 100%;
+            left: 0;
+        }
+
+        span::before, span::after
+        {
+            height: 100%;
+            top: 0;
+        }
+    }
+
+    span 
+    {
+        display: block;
+        padding: 20px 30px;
+    
+        &::before, &::after
+        {
+            content: "";
+            width: 3px;
+            height: 0;
+            position: absolute;
+            transition: all 0.2s linear;
+            background: #fff;
+            transition-duration: 0.3s;
+        }
+
+        &::before
+        {
+            left: 0;
+            top: 50%;
+        }
+
+        &::after
+        {
+            right: 0;
+            top: 50%
+        }
+    }
+}

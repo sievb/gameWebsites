@@ -1,23 +1,17 @@
+@import '../css/reset.css';
 @font-face {
   font-family: trajanpro;
-  src: url("Trajan Pro Regular.ttf");
+  src: url("../font/trajan/Trajan Pro Regular.ttf");
 }
-
 @font-face {
   font-family: trajanpro;
-  src: url("Trajan Pro Bold.ttf");
+  src: url("../font/trajan/Trajan Pro Bold.ttf");
   font-weight: bold;
 }
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  background-image: url("kianAndZoe.jpg");
+  background-image: url("../img/kianAndZoe.jpg");
   background-size: cover;
-  color: #777;
+  color: #5f6969;
   font-family: trajanpro;
 }
 
@@ -28,11 +22,9 @@ div {
   text-align: center;
   width: 100%;
 }
-
 div h1 {
   font-size: 4rem;
 }
-
 div h2 {
   font-size: 2.5rem;
   font-weight: normal;
@@ -54,66 +46,56 @@ a {
   transform: translate(-50%, -50%);
   font-size: 1.5rem;
   text-decoration: none;
-  color: #777;
+  color: #5f6969;
   font-weight: bold;
   display: inline-block;
   border: none;
 }
-
-span {
+a::before, a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #fff;
+  transition-duration: 0.3s;
+}
+a::before {
+  left: 50%;
+  top: 0;
+}
+a::after {
+  left: 50%;
+  bottom: 0;
+}
+a:hover::before, a:hover::after {
+  width: 100%;
+  left: 0;
+}
+a:hover span::before, a:hover span::after {
+  height: 100%;
+  top: 0;
+}
+a span {
   display: block;
   padding: 20px 30px;
 }
-
-a::before, a::after{
-  content:"";
-  width: 0;
-  height: 2px;
+a span::before, a span::after {
+  content: "";
+  width: 3px;
+  height: 0;
   position: absolute;
   transition: all 0.2s linear;
   background: #fff;
-}
-
-span::before, span::after{
-  content:"";
-  width:2px;
-  height:0;
-  position: absolute;
-  transition: all 0.2s linear;
-  background: #fff;
-}
-
-a:hover::before, a:hover::after{
-  width: 100%;
-}
-a:hover span::before, a:hover span::after{
-  height: 100%;
-}
-
-a::before{
-  left: 50%;
-  top: 0;
   transition-duration: 0.3s;
 }
-a::after{
-  left: 50%;
-  bottom: 0;
-  transition-duration: 0.3s;
-}
-a span::before{
+a span::before {
   left: 0;
   top: 50%;
-  transition-duration: 0.3s;
 }
-
-a span::after{
+a span::after {
   right: 0;
   top: 50%;
-  transition-duration: 0.3s;
 }
-a:hover::before, a:hover::after{
-  left: 0;
-}
-a:hover span::before, a:hover span::after{
-  top: 0;
-}
+
+/*# sourceMappingURL=landing.css.map */
